@@ -91,7 +91,7 @@ console.log("Mining block 1: ");
 gunChain.addBlock(
   new Block(1, "06/29/2019", {
     gunName: "Colt M1911",
-    serialNo: 69,
+    serialNo: 925029450,
     gunOwner: "John Johnson"
   })
 );
@@ -99,7 +99,7 @@ console.log("Mining block 2: ");
 gunChain.addBlock(
   new Block(2, "06/29/2019", {
     gunName: "H&K G36",
-    serialNo: 420,
+    serialNo: 3240202040,
     gunOwner: "Adam Adamson"
   })
 );
@@ -157,7 +157,7 @@ function App() {
           <div class="card text-left">
             <h5 class="card-header">View Blockchain</h5>
             <div class="card-body">
-              <h5 class="card-title">See transactions for guns</h5>
+              <h5 class="card-title">See transactions for firearms</h5>
               <p class="card-text">Click below to see the blockchain</p>
               <button class="btn btn-primary" onClick={ActionLink}>
                 Click Here
@@ -169,7 +169,7 @@ function App() {
           <div class="card text-left">
             <h5 class="card-header">Add Transaction</h5>
             <div class="card-body">
-              <h5 class="card-title">Add a transactions for a gun</h5>
+              <h5 class="card-title">Add a transactions for a firearm</h5>
               <p class="card-text">Click below to see the results</p>
               <form id="frm1">
                 <div className="form-group">
@@ -183,7 +183,7 @@ function App() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="formGroupExampleInput2">
-                    Unique Serial for Gun
+                    Unique Serial for Firearm
                   </label>
                   <input
                     type="text"
@@ -193,7 +193,7 @@ function App() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="formGroupExampleInput3">Gun Name</label>
+                  <label htmlFor="formGroupExampleInput3">Firearm Name</label>
                   <input
                     type="text"
                     className="form-control"
