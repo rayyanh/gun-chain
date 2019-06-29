@@ -1,6 +1,7 @@
 import React from "react";
 
 function Card(props) {
+  const propFinal = props.button;
   return (
     // <div
     //   className="card text-white bg-secondary mb-3"
@@ -21,9 +22,9 @@ function Card(props) {
       <div class="card-body">
         <h5 class="card-title">{props.head}</h5>
         <p class="card-text">{props.info}</p>
-        <a href="#" class="btn btn-primary">
+        <button class="btn btn-primary" onClick={propFinal}>
           Click Here
-        </a>
+        </button>
       </div>
     </div>
   );
