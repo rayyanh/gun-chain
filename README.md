@@ -1,2 +1,2 @@
 # gun-chain
-Blockchain for gun related transactions.
+Blockchain for firearm related transactions.
