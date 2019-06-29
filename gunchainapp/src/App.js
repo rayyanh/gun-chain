@@ -6,7 +6,7 @@ import Card from "./mainArea";
 import Jumbo from "./jumbo";
 import "./main.js";
 import CardForm from "./cardForm";
-
+var count = 2;
 const imgSize = {
   width: "75px",
   height: "auto"
@@ -111,6 +111,28 @@ function App() {
     e.preventDefault();
     alert(JSON.stringify(gunChain, null, 4));
   }
+
+  function AddingIt(event) {
+    event.preventDefault();
+    console.log("Mining block 3: ");
+
+    var x = document.getElementById("frm1");
+    var text = [];
+    var i;
+    for (i = 0; i < x.length; i++) {
+      text[i] = x.elements[i].value;
+    }
+    count++;
+    gunChain.addBlock(
+      new Block(count, "06/29/2019", {
+        gunName: text[2],
+        serialNo: text[1],
+        gunOwner: text[0]
+      })
+    );
+    //alert(gunChain.getLatestBlock());
+    alert(JSON.stringify(gunChain.getLatestBlock(), null, 4));
+  }
   return (
     <div className="App navColoor">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -131,6 +153,7 @@ function App() {
         <div className="container">
           <br />
           <Jumbo />
+
           <div class="card text-left">
             <h5 class="card-header">View Blockchain</h5>
             <div class="card-body">
@@ -142,17 +165,49 @@ function App() {
             </div>
           </div>
           <br />
-          <CardForm
-            title="Add Transaction"
-            head="Add a transactions for a gun"
-            info="Click below to see the results"
-          />
+
+          <div class="card text-left">
+            <h5 class="card-header">Add Transaction</h5>
+            <div class="card-body">
+              <h5 class="card-title">Add a transactions for a gun</h5>
+              <p class="card-text">Click below to see the results</p>
+              <form id="frm1">
+                <div className="form-group">
+                  <label htmlFor="formGroupExampleInput">Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput"
+                    placeholder=""
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="formGroupExampleInput2">
+                    Unique Serial for Gun
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput2"
+                    placeholder=""
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="formGroupExampleInput3">Gun Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formGroupExampleInput2"
+                    placeholder=""
+                  />
+                </div>
+              </form>
+              <button value="Submit" class="btn btn-primary" onClick={AddingIt}>
+                Click Here
+              </button>
+            </div>
+          </div>
           <br />
-          <Card
-            title="See Latest Transaction"
-            head="Grab the latest transaction from the blockchain"
-            info="Click below to view"
-          />
         </div>
       </div>
       <br />
